@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>🥖 Es lo que hay - Delivery</title>
+    <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Es%20lo%20que%20hay%22%2C%22short_name%22%3A%22Es%20lo%20que%20hay%22%2C%22theme_color%22%3A%22%23D45D35%22%2C%22background_color%22%3A%22%23FDF8F5%22%2C%22display%22%3A%22standalone%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20512%20512'%253E%253Crect%20width%3D'512'%20height%3D'512'%20fill%3D'%2523D45D35'%20rx%3D'100'%2F%253E%253Ctext%20x%3D'256'%20y%3D'360'%20font-size%3D'280'%20text-anchor%3D'middle'%20fill%3D'white'%20font-family%3D'Arial'%253E%25F0%259F%25A5%2596%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+    <meta name="theme-color" content="#D45D35">
+    <style>
+        /* === ESTILO FONDA (TODO INCLUIDO) === */
+        :root{--fondo:#FDF8F5;--naranja-fonda:#D45D35;--naranja-oscuro:#B13E1A;--crema:#F4E9D8;--texto-oscuro:#2C2A29;--borde-claro:#E2D4C8;--verde-confirmar:#2E7D32;--sombra:0 4px 12px rgba(0,0,0,0.08)}*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background-color:var(--fondo);color:var(--texto-oscuro);line-height:1.5;padding-bottom:80px;-webkit-font-smoothing:antialiased}h1,h2{font-family:"Times New Roman",Times,serif;font-weight:600;letter-spacing:-0.02em}.app-header{position:sticky;top:0;background:var(--fondo);border-bottom:1px solid var(--borde-claro);padding:12px 16px 0;z-index:10;box-shadow:var(--sombra)}.header-content{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}h1{font-size:1.8rem;color:var(--naranja-oscuro)}.cart-icon{background:0 0;border:none;position:relative;padding:8px;color:var(--naranja-fonda);cursor:pointer}.badge{position:absolute;top:0;right:0;background:var(--naranja-fonda);color:#fff;border-radius:50%;width:20px;height:20px;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}.categorias-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.categorias-scroll::-webkit-scrollbar{display:none}.chip{background:#fff;border:1px solid var(--borde-claro);color:var(--texto-oscuro);padding:8px 18px;border-radius:40px;font-size:.9rem;font-weight:500;white-space:nowrap;cursor:pointer;transition:all .1s}.chip.active{background:var(--naranja-fonda);border-color:var(--naranja-fonda);color:#fff}.moneda-selector{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:8px 0 12px;border-top:1px solid var(--borde-claro);margin-top:4px}.moneda-label{font-size:.8rem;font-weight:600;color:#777}.switch{position:relative;display:inline-block;width:48px;height:24px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.2s;border-radius:24px}.slider:before{position:absolute;content:"";height:20px;width:20px;left:2px;bottom:2px;background-color:#fff;transition:.2s;border-radius:50%}input:checked+.slider{background-color:var(--verde-confirmar)}input:checked+.slider:before{transform:translateX(24px)}.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}.producto-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--sombra);border:1px solid var(--borde-claro);display:flex;flex-direction:column}.producto-img{width:100%;aspect-ratio:1/1;background:var(--crema);display:flex;align-items:center;justify-content:center;color:var(--naranja-oscuro);font-size:2.5rem}.producto-info{padding:12px 10px 14px}.producto-nombre{font-weight:600;font-size:1rem;margin-bottom:4px;line-height:1.3}.producto-precio{color:var(--naranja-oscuro);font-weight:700;font-size:1.3rem;margin-bottom:10px}.btn-agregar{background:var(--naranja-fonda);border:none;color:#fff;width:100%;padding:10px 0;border-radius:40px;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:4px;cursor:pointer;touch-action:manipulation}.btn-agregar:active{background:var(--naranja-oscuro)}.checkout-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--borde-claro);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 -4px 12px rgba(0,0,0,.05);z-index:20}.checkout-bar.oculto{display:none}.checkout-info{display:flex;flex-direction:column}#total-items{font-size:.8rem;color:#666}.precio-total{font-size:1.5rem;font-weight:700;color:var(--naranja-oscuro)}.btn-wa{background:var(--verde-confirmar);color:#fff;border:none;padding:14px 24px;border-radius:60px;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;box-shadow:0 4px 8px rgba(0,0,0,.1);cursor:pointer;touch-action:manipulation}.btn-wa.full-width{width:100%;justify-content:center;margin-top:12px}.modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:30}.modal.oculto{display:none}.modal-content{background:#fff;width:100%;max-width:500px;border-radius:28px 28px 0 0;padding:20px;max-height:80vh;overflow-y:auto}.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.close-btn{font-size:28px;background:0 0;border:none;cursor:pointer}.cart-list{list-style:none;margin-bottom:20px}.cart-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--borde-claro)}.pago-info{background:var(--crema);padding:12px;border-radius:16px;margin:16px 0;font-size:.9rem}.loader{text-align:center;padding:40px;grid-column:span 2;color:#888}
+    </style>
+</head>
+<body>
+
+<header class="app-header">
+    <div class="header-content">
+        <h1>🥖 Es lo que hay</h1>
+        <button id="carrito-btn" class="cart-icon" aria-label="Ver carrito">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span id="contador-carrito" class="badge">0</span>
+        </button>
+    </div>
+    <div class="categorias-scroll">
+        <button class="chip active" data-cat="todos">Todos</button>
+        <button class="chip" data-cat="granos">Granos</button>
+        <button class="chip" data-cat="azucar">Azúcar</button>
+        <button class="chip" data-cat="otros">Otros</button>
+    </div>
+    <div class="moneda-selector">
+        <span class="moneda-label">CUP</span>
+        <label class="switch"><input type="checkbox" id="toggle-moneda"><span class="slider round"></span></label>
+        <span class="moneda-label">USD</span>
+    </div>
+</header>
+
+<main id="lista-productos" class="product-grid">
+    <div class="loader">Cargando productos frescos...</div>
+</main>
+
+<div id="checkout-bar" class="checkout-bar oculto">
+    <div class="checkout-info">
+        <span id="total-items">0 items</span>
+        <span id="total-precio" class="precio-total">$0.00</span>
+    </div>
+    <button id="btn-pedir-wa" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.057 2.284 7.034L.03 24l5.137-2.216A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-2.183 0-4.21-.64-5.907-1.738l-.424-.278-3.048 1.316 1.344-2.975-.283-.45A9.46 9.46 0 0 1 2.5 12c0-5.238 4.262-9.5 9.5-9.5s9.5 4.262 9.5 9.5-4.262 9.5-9.5 9.5z"/>
+            <path d="M17.5 14.5c-.3 0-.5-.2-.7-.3-.9-.4-1.8-.9-2.7-1.3-.3-.1-.5-.1-.7.1-.2.2-.9 1-.9 1-.1.1-.3.2-.5.1-.2 0-.4-.1-.5-.2-1.4-1.2-2.6-2.7-3.5-4.4-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.1.2-.3.1-.5 0-.1-.1-.3-.2-.4-.6-.7-1.2-1.4-1.8-2.1-.2-.2-.4-.2-.6-.1-.2.1-.5.2-.7.3-.3.2-.5.5-.5.8 0 .8.5 1.8.9 2.6.8 1.5 2 2.9 3.5 3.9.5.3 1 .6 1.6.7.2.1.4.1.6.1.3 0 .5-.1.7-.3.2-.2.5-.5.7-.8.1-.2.2-.3.1-.5 0-.2-.1-.3-.3-.4z"/>
+        </svg>
+        PEDIR AHORA
+    </button>
+</div>
+
+<div id="modal-carrito" class="modal oculto">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🛒 Tu Pedido</h2>
+            <button id="cerrar-modal" class="close-btn">&times;</button>
+        </div>
+        <ul id="lista-carrito" class="cart-list"></ul>
+        <div class="modal-footer">
+            <p class="pago-info">💵 Efectivo / Transfermóvil / Enzona contra entrega</p>
+            <button id="btn-pedir-modal" class="btn-wa full-width">Enviar por WhatsApp</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // === TIENDA.JS INCORPORADO (TODO EN UNO) ===
+    const PRODUCTOS_JSON = [
+        {"id":"arroz-1kg","nombre":"Arroz Seleccionado (Paquete 1kg)","precio_cup":180.00,"precio_usd":0.55,"categoria":"granos","emoji":"🍚","disponible":true},
+        {"id":"azucar-1kg","nombre":"Azúcar Blanca Refinada (1kg)","precio_cup":120.00,"precio_usd":0.35,"categoria":"azucar","emoji":"🍬","disponible":true},
+        {"id":"frijoles-1kg","nombre":"Frijoles Negros (Paquete 1kg)","precio_cup":220.00,"precio_usd":0.65,"categoria":"granos","emoji":"🫘","disponible":true},
+        {"id":"aceite-1l","nombre":"Aceite Vegetal (1 Litro)","precio_cup":350.00,"precio_usd":1.05,"categoria":"otros","emoji":"🫒","disponible":true}
+    ];
+
+    let productos = PRODUCTOS_JSON;
+    let carrito = [];
+    let categoriaActiva = 'todos';
+    let monedaActual = 'CUP';
+
+    const grid = document.getElementById('lista-productos');
+    const contadorSpan = document.getElementById('contador-carrito');
+    const checkoutBar = document.getElementById('checkout-bar');
+    const totalItemsSpan = document.getElementById('total-items');
+    const totalPrecioSpan = document.getElementById('total-precio');
+    const btnPedirWA = document.getElementById('btn-pedir-wa');
+    const btnPedirModal = document.getElementById('btn-pedir-modal');
+    const modalCarrito = document.getElementById('modal-carrito');
+    const listaCarritoUl = document.getElementById('lista-carrito');
+    const btnCarritoIcon = document.getElementById('carrito-btn');
+    const btnCerrarModal = document.getElementById('cerrar-modal');
+    const toggleMoneda = document.getElementById('toggle-moneda');
+
+    function getPrecio(p) { return monedaActual === 'CUP' ? p.precio_cup : p.precio_usd; }
+    function getSimbolo() { return monedaActual === 'CUP' ? '$ CUP' : '$ USD'; }
+
+    function renderizarProductos() {
+        const filtrados = categoriaActiva === 'todos' ? productos : productos.filter(p => p.categoria === categoriaActiva);
+        if (!filtrados.length) { grid.innerHTML = '<div class="loader">No hay productos.</div>'; return; }
+        grid.innerHTML = filtrados.map(p => {
+            const precio = getPrecio(p);
+            return `<div class="producto-card"><div class="producto-img">${p.emoji||'📦'}</div><div class="producto-info"><div class="producto-nombre">${p.nombre}</div><div class="producto-precio">${getSimbolo()} ${precio.toFixed(2)}</div><button class="btn-agregar" data-id="${p.id}" data-nombre="${p.nombre}" data-cup="${p.precio_cup}" data-usd="${p.precio_usd}"><span>➕</span> Agregar</button></div></div>`;
+        }).join('');
+        document.querySelectorAll('.btn-agregar').forEach(btn => btn.addEventListener('click', (e) => {
+            const {id, nombre, cup, usd} = btn.dataset;
+            agregarAlCarrito({id, nombre, precio_cup: +cup, precio_usd: +usd});
+        }));
+    }
+
+    function agregarAlCarrito(p) {
+        const existente = carrito.find(i => i.id === p.id);
+        existente ? existente.cantidad++ : carrito.push({...p, cantidad: 1});
+        actualizarUI();
+        if (navigator.vibrate) navigator.vibrate(20);
+    }
+
+    function actualizarUI() {
+        const totalCant = carrito.reduce((s,i) => s + i.cantidad, 0);
+        contadorSpan.textContent = totalCant;
+        if (totalCant > 0) {
+            checkoutBar.classList.remove('oculto');
+            const total = carrito.reduce((s,i) => s + (monedaActual==='CUP'?i.precio_cup:i.precio_usd) * i.cantidad, 0);
+            totalItemsSpan.textContent = `${totalCant} item${totalCant!==1?'s':''}`;
+            totalPrecioSpan.textContent = `${getSimbolo()} ${total.toFixed(2)}`;
+        } else checkoutBar.classList.add('oculto');
+        if (!modalCarrito.classList.contains('oculto')) renderizarModalCarrito();
+    }
+
+    function renderizarModalCarrito() {
+        if (!carrito.length) { listaCarritoUl.innerHTML = '<li style="text-align:center;">🛒 Carrito vacío</li>'; return; }
+        listaCarritoUl.innerHTML = carrito.map(i => {
+            const precio = monedaActual==='CUP'? i.precio_cup : i.precio_usd;
+            return `<li class="cart-item"><span><strong>${i.nombre}</strong> x${i.cantidad}</span><span>${getSimbolo()} ${(precio*i.cantidad).toFixed(2)}</span></li>`;
+        }).join('');
+    }
+
+    function generarMensaje() {
+        let totalCUP=0, totalUSD=0, txt=`*🛒 PEDIDO - ES LO QUE HAY*%0A%0A📋 *Productos:*%0A`;
+        carrito.forEach(i => { totalCUP+=i.precio_cup*i.cantidad; totalUSD+=i.precio_usd*i.cantidad; txt+=`- ${i.nombre} x${i.cantidad}%0A`; });
+        txt+=`%0A💰 *TOTAL:*%0A   CUP: $ ${totalCUP.toFixed(2)}%0A   USD: $ ${totalUSD.toFixed(2)}%0A`;
+        txt+=`%0A💳 *Pago: Efectivo / Transfermóvil / Enzona contra entrega*%0A%0A📍 *Datos de Entrega (Completar por el cliente):*%0A- Nombre y Apellidos:%0A- Dirección exacta:%0A- Teléfono:%0A- Referencia:%0A`;
+        return txt;
+    }
+
+    function enviarPedido() {
+        if (!carrito.length) { alert('Agrega productos primero'); return; }
+        window.open(`https://wa.me/5355779808?text=${generarMensaje()}`, '_blank'); // CAMBIA EL NÚMERO AQUÍ
+    }
+
+    btnPedirWA.addEventListener('click', enviarPedido);
+    btnPedirModal.addEventListener('click', ()=>{ enviarPedido(); modalCarrito.classList.add('oculto'); });
+    btnCarritoIcon.addEventListener('click', ()=>{ renderizarModalCarrito(); modalCarrito.classList.remove('oculto'); });
+    btnCerrarModal.addEventListener('click', ()=> modalCarrito.classList.add('oculto'));
+    toggleMoneda.addEventListener('change', e=>{ monedaActual = e.target.checked ? 'USD' : 'CUP'; renderizarProductos(); actualizarUI(); });
+    document.querySelectorAll('.chip').forEach(c=> c.addEventListener('click', e=>{
+        document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); c.classList.add('active');
+        categoriaActiva = c.dataset.cat; renderizarProductos();
+    }));
+    modalCarrito.addEventListener('click', e=>{ if(e.target===modalCarrito) modalCarrito.classList.add('oculto'); });
+
+    // Service Worker inline (Opcional para caché)
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('data:application/javascript,self.addEventListener("install",()=>self.skipWaiting());self.addEventListener("fetch",e=>e.respondWith(fetch(e.request).catch(()=>caches.match(e.request))));');
+    }
+
+    renderizarProductos();
+</script>
+</body>
+</html>
